@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="GameProject">
+  <ClassDiagramComponents>
+    <Class name="Ball" package="gameproject" visibility="public" xPosition="23.0" yPosition="8.0">
+      <Fields>
+        <Field name="x" type="double" visibility="private"/>
+        <Field name="y" type="double" visibility="private"/>
+        <Field name="radius" type="double" visibility="private"/>
+        <Field name="mass" type="double" visibility="private"/>
+        <Field name="speed" type="Speed" visibility="private"/>
+        <Field name="color" type="Color" visibility="private"/>
+        <Field name="solid" type="boolean" visibility="private"/>
+        <Field name="ballNumber" type="int" visibility="private"/>
+        <Field name="ballHit" type="Sound" visibility="package"/>
+        <Field name="pocketed" type="Boolean" visibility="package"/>
+        <Field name="slowDownSpeed" type="double" visibility="package"/>
+        <Field name="distance" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double" name="x"/>
+          <Argument type="double" name="y"/>
+          <Argument type="double" name="radius"/>
+          <Argument type="double" name="mass"/>
+          <Argument type="Speed" name="speed"/>
+          <Argument type="Color" name="ballColor"/>
+          <Argument type="boolean" name="solid"/>
+          <Argument type="int" name="ballNumber"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getSpeed" returnType="Speed" visibility="public"/>
+        <Method name="getX" returnType="double" visibility="public"/>
+        <Method name="getY" returnType="double" visibility="public"/>
+        <Method name="getRadius" returnType="double" visibility="public"/>
+        <Method name="setRadius" returnType="void" visibility="public">
+          <Argument type="double" name="radius"/>
+        </Method>
+        <Method name="getMass" returnType="double" visibility="public"/>
+        <Method name="setMass" returnType="void" visibility="public">
+          <Argument type="double" name="mass"/>
+        </Method>
+        <Method name="setColor" returnType="void" visibility="public">
+          <Argument type="Color" name="ballColor"/>
+        </Method>
+        <Method name="setX" returnType="void" visibility="public">
+          <Argument type="Double" name="x"/>
+        </Method>
+        <Method name="setY" returnType="void" visibility="public">
+          <Argument type="Double" name="y"/>
+        </Method>
+        <Method name="getColor" returnType="Color" visibility="public"/>
+        <Method name="setSolid" returnType="void" visibility="public">
+          <Argument type="boolean" name="solid"/>
+        </Method>
+        <Method name="getSolid" returnType="boolean" visibility="public"/>
+        <Method name="setBallNumber" returnType="void" visibility="public">
+          <Argument type="int" name="ballNumber"/>
+        </Method>
+        <Method name="getBallNumber" returnType="int" visibility="public"/>
+        <Method name="setSpeedZero" returnType="void" visibility="public"/>
+        <Method name="pocketed" returnType="void" visibility="public"/>
+        <Method name="moving" returnType="boolean" visibility="public"/>
+        <Method name="move" returnType="void" visibility="public">
+          <Argument type="double" name="time"/>
+        </Method>
+        <Method name="move" returnType="void" visibility="public">
+          <Argument type="double" name="x"/>
+          <Argument type="double" name="y"/>
+        </Method>
+        <Method name="paint" returnType="void" visibility="public">
+          <Argument type="Graphics2D" name="g"/>
+        </Method>
+        <Method name="next_collision" returnType="double" visibility="public">
+          <Argument type="Ball" name="next"/>
+        </Method>
+        <Method name="collide" returnType="void" visibility="public">
+          <Argument type="Ball" name="next"/>
+          <Argument type="double" name="time"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="BlinkLabel" package="gameproject" visibility="public" xPosition="695.0" yPosition="39.0">
+      <Fields>
+        <Field name="text" type="String" visibility="private"/>
+        <Field name="textVisible" type="boolean" visibility="private"/>
+        <Field name="isBlinking" type="boolean" visibility="protected"/>
+        <Field name="timer" type="Timer" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="label"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="startBlinking" returnType="void" visibility="public"/>
+        <Method name="stopBlinking" returnType="void" visibility="public"/>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Character" package="gameproject" visibility="public" xPosition="1290.0" yPosition="970.0">
+      <Fields>
+        <Field name="name" type="String" visibility="package"/>
+        <Field name="turn" type="boolean" visibility="package"/>
+        <Field name="points" type="int" visibility="package"/>
+        <Field name="striped" type="boolean" visibility="package"/>
+        <Field name="betAmount" type="int" visibility="package"/>
+        <Field name="player_cue" type="BufferedImage" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="boolean" name="turn"/>
+          <Argument type="int" name="points"/>
+          <Argument type="boolean" name="striped"/>
+          <Argument type="int" name="betAmount"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCue" returnType="BufferedImage" visibility="public"/>
+        <Method name="setCue" returnType="void" visibility="public">
+          <Argument type="BufferedImage" name="i"/>
+        </Method>
+        <Method name="incrementScore" returnType="void" visibility="public"/>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="isTurn" returnType="boolean" visibility="public"/>
+        <Method name="setTurn" returnType="void" visibility="public">
+          <Argument type="boolean" name="turn"/>
+        </Method>
+        <Method name="getPoints" returnType="int" visibility="public"/>
+        <Method name="setPoints" returnType="void" visibility="public">
+          <Argument type="int" name="points"/>
+        </Method>
+        <Method name="isStriped" returnType="boolean" visibility="public"/>
+        <Method name="setStriped" returnType="void" visibility="public">
+          <Argument type="boolean" name="striped"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Cue" package="gameproject" visibility="public" xPosition="937.0" yPosition="-47.0">
+      <Fields>
+        <Field name="CUE_WIDTH" type="int" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="CUE_HEIGHT" type="int" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="xPos" type="int" visibility="private"/>
+        <Field name="yPos" type="int" visibility="private"/>
+        <Field name="drawBack_xPos" type="int" visibility="private"/>
+        <Field name="drawnBack" type="boolean" visibility="private"/>
+        <Field name="ballsMoving" type="boolean" visibility="private"/>
+        <Field name="MOUSE_HELD_DOWN" type="boolean" visibility="private" isStatic="true"/>
+        <Field name="angle" type="int" visibility="private" isStatic="true"/>
+        <Field name="power" type="double" visibility="package"/>
+        <Field name="color" type="Color" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="JPanel" name="frame"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="updatePosition" returnType="void" visibility="public">
+          <Argument type="int" name="xPos"/>
+          <Argument type="int" name="yPos"/>
+        </Method>
+        <Method name="updateAngle" returnType="void" visibility="public" isStatic="true">
+          <Argument type="int" name="increment"/>
+        </Method>
+        <Method name="drawBack" returnType="void" visibility="public"/>
+        <Method name="render" returnType="void" visibility="public">
+          <Argument type="Graphics" name="g"/>
+          <Argument type="BufferedImage" name="cue"/>
+          <Argument type="Level" name="level"/>
+        </Method>
+        <Method name="mouseClicked" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="mousePressed" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="mouseReleased" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="mouseEntered" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="mouseExited" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GameProject" package="gameproject" visibility="public" xPosition="1290.0" yPosition="300.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Input" package="gameproject" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="frame" type="JFrame" visibility="private"/>
+        <Field name="saveFile" type="SaveFile" visibility="package"/>
+        <Field name="MOUSE_X_POS" type="int" visibility="public" isStatic="true"/>
+        <Field name="MOUSE_Y_POS" type="int" visibility="public" isStatic="true"/>
+        <Field name="MOUSE_PRESSED" type="boolean" visibility="public" isStatic="true"/>
+        <Field name="MOUSE_RELEASED" type="boolean" visibility="public" isStatic="true"/>
+        <Field name="MOUSE_HOLD_DOWN_TIME" type="long" visibility="public" isStatic="true"/>
+        <Field name="MOUSE_CLICKED" type="boolean" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="JFrame" name="frame"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="mouseDragged" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="mouseMoved" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="keyTyped" returnType="void" visibility="public">
+          <Argument type="KeyEvent" name="e"/>
+        </Method>
+        <Method name="keyPressed" returnType="void" visibility="public">
+          <Argument type="KeyEvent" name="e"/>
+        </Method>
+        <Method name="keyReleased" returnType="void" visibility="public">
+          <Argument type="KeyEvent" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Level" package="gameproject" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields>
+        <Field name="wooden_tileup" type="BufferedImage" visibility="private"/>
+        <Field name="wooden_tiledown" type="BufferedImage" visibility="private"/>
+        <Field name="wooden_tile_rotated90right" type="BufferedImage" visibility="private"/>
+        <Field name="wooden_tile_rotated90left" type="BufferedImage" visibility="private"/>
+        <Field name="black_dot1" type="BufferedImage" visibility="private"/>
+        <Field name="black_dot2" type="BufferedImage" visibility="private"/>
+        <Field name="black_dot3" type="BufferedImage" visibility="private"/>
+        <Field name="black_dot4" type="BufferedImage" visibility="private"/>
+        <Field name="black_dot5" type="BufferedImage" visibility="private"/>
+        <Field name="black_dot6" type="BufferedImage" visibility="private"/>
+        <Field name="table_grass" type="BufferedImage" visibility="private"/>
+        <Field name="graphic_cue1" type="BufferedImage" visibility="private"/>
+        <Field name="graphic_cue2" type="BufferedImage" visibility="private"/>
+        <Field name="graphic_cue3" type="BufferedImage" visibility="private"/>
+        <Field name="graphic_cue4" type="BufferedImage" visibility="private"/>
+        <Field name="ballList" type="LinkList" visibility="public"/>
+        <Field name="ball" type="Ball[]" visibility="public"/>
+        <Field name="cue" type="Cue" visibility="public"/>
+        <Field name="r" type="Random" visibility="package"/>
+        <Field name="ra" type="int" visibility="package"/>
+        <Field name="player1" type="Character" visibility="package"/>
+        <Field name="player2" type="Character" visibility="package"/>
+        <Field name="screenSize" type="Dimension" visibility="package" isStatic="true"/>
+        <Field name="WIDTH" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="HEIGHT" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="BALLS" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="saveFile" type="SaveFile" visibility="package"/>
+        <Field name="next_collision" type="double" visibility="private"/>
+        <Field name="first" type="Ball" visibility="private"/>
+        <Field name="second" type="Ball" visibility="private"/>
+        <Field name="p1" type="JLabel" visibility="package"/>
+        <Field name="p2" type="JLabel" visibility="package"/>
+        <Field name="paused" type="boolean" visibility="private" isStatic="true"/>
+        <Field name="queued_collision_update" type="boolean" visibility="private" isStatic="true"/>
+        <Field name="INIT_RADIUS" type="double" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="INIT_MASS" type="double" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="YELLOW" type="Color" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="BLUE" type="Color" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="RED" type="Color" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="PURPLE" type="Color" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="ORANGE" type="Color" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="GREEN" type="Color" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="BROWN" type="Color" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="BLACK" type="Color" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="WHITE" type="Color" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="DARK_RED" type="Color" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="collisionOccured" type="boolean" visibility="package"/>
+        <Field name="METER_TO_PIXEL" type="double" visibility="package"/>
+        <Field name="TABLE_WIDTH" type="int" visibility="package"/>
+        <Field name="TABLE_HEIGHT" type="int" visibility="package"/>
+        <Field name="PLAY_WIDTH" type="int" visibility="package"/>
+        <Field name="PLAY_HEIGHT" type="int" visibility="package"/>
+        <Field name="WIDTH_GAP" type="int" visibility="package"/>
+        <Field name="HEIGHT_GAP" type="int" visibility="package"/>
+        <Field name="dx" type="double" visibility="package"/>
+        <Field name="dy" type="double" visibility="package"/>
+        <Field name="centerX" type="double" visibility="package"/>
+        <Field name="centerY" type="double" visibility="package"/>
+        <Field name="initialPosX" type="double" visibility="package"/>
+        <Field name="initialPosY" type="double" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="loadGame" returnType="void" visibility="public">
+          <Argument type="String" name="path"/>
+        </Method>
+        <Method name="addPocketBalls" returnType="void" visibility="public"/>
+        <Method name="loadTextures" returnType="BufferedImage" visibility="public">
+          <Argument type="String" name="path"/>
+        </Method>
+        <Method name="paintComponent" returnType="void" visibility="public">
+          <Argument type="Graphics" name="g"/>
+        </Method>
+        <Method name="queue_collision_update" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="collision_update" returnType="void" visibility="public"/>
+        <Method name="swapPlayerTurn" returnType="void" visibility="public">
+          <Argument type="Graphics" name="g2d"/>
+        </Method>
+        <Method name="getBall" returnType="Ball" visibility="public">
+          <Argument type="int" name="key"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="LinkList" package="gameproject" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields>
+        <Field name="first" type="Node" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="insert" returnType="void" visibility="public">
+          <Argument type="Ball" name="ball"/>
+        </Method>
+        <Method name="printList" returnType="void" visibility="public"/>
+        <Method name="getElements" returnType="Ball[]" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="gameproject" visibility="public" xPosition="839.0" yPosition="982.0">
+      <Fields>
+        <Field name="content" type="Level" visibility="public" isStatic="true"/>
+        <Field name="helpString" type="String" visibility="package"/>
+        <Field name="screenSize" type="Dimension" visibility="private" isStatic="true"/>
+        <Field name="WIDTH" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="HEIGHT" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="splashScreen" type="JFrame" visibility="private" isFinal="true"/>
+        <Field name="mainScreen" type="JFrame" visibility="private" isFinal="true"/>
+        <Field name="playScreen" type="JFrame" visibility="private" isFinal="true"/>
+        <Field name="input" type="Input" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+        <Method name="button" returnType="JButton" visibility="public" isStatic="true">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="startBalls" returnType="void" visibility="public"/>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Node" package="gameproject" visibility="public" xPosition="72.0" yPosition="912.0">
+      <Fields>
+        <Field name="next" type="Node" visibility="package"/>
+        <Field name="ball" type="Ball" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Ball" name="b"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="SaveFile" package="gameproject" visibility="public" xPosition="1011.0" yPosition="748.0">
+      <Fields>
+        <Field name="raf" type="RandomAccessFile" visibility="private"/>
+        <Field name="path" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Level" name="game"/>
+          <Argument type="String" name="path"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="write" returnType="void" visibility="public">
+          <Argument type="Level" name="game"/>
+        </Method>
+        <Method name="readCharacterInfo" returnType="Character[]" visibility="public" isStatic="true">
+          <Argument type="String" name="path"/>
+        </Method>
+        <Method name="readBallInfo" returnType="Ball[]" visibility="public" isStatic="true">
+          <Argument type="String" name="path"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Sound" package="gameproject" visibility="public" xPosition="1390.0" yPosition="552.0">
+      <Fields>
+        <Field name="clip" type="Clip" visibility="package"/>
+        <Field name="inputStream" type="AudioInputStream" visibility="package"/>
+        <Field name="volume" type="FloatControl" visibility="package"/>
+        <Field name="vol" type="int" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="loadSound" returnType="void" visibility="public">
+          <Argument type="String" name="filePath"/>
+        </Method>
+        <Method name="playSound" returnType="void" visibility="public"/>
+        <Method name="stopSound" returnType="void" visibility="public"/>
+        <Method name="setVolume" returnType="void" visibility="public">
+          <Argument type="int" name="x"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Speed" package="gameproject" visibility="public" xPosition="469.0" yPosition="869.0">
+      <Fields>
+        <Field name="x" type="double" visibility="private"/>
+        <Field name="y" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double" name="x"/>
+          <Argument type="double" name="y"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getX" returnType="double" visibility="public"/>
+        <Method name="getY" returnType="double" visibility="public"/>
+        <Method name="getComponent" returnType="double" visibility="public">
+          <Argument type="double" name="theta"/>
+        </Method>
+        <Method name="addX" returnType="void" visibility="public">
+          <Argument type="double" name="speed"/>
+        </Method>
+        <Method name="addY" returnType="void" visibility="public">
+          <Argument type="double" name="speed"/>
+        </Method>
+        <Method name="subtractX" returnType="void" visibility="public">
+          <Argument type="double" name="speed"/>
+        </Method>
+        <Method name="subtractY" returnType="void" visibility="public">
+          <Argument type="double" name="speed"/>
+        </Method>
+        <Method name="setX" returnType="void" visibility="public">
+          <Argument type="double" name="xSpeed"/>
+        </Method>
+        <Method name="setY" returnType="void" visibility="public">
+          <Argument type="double" name="ySpeed"/>
+        </Method>
+        <Method name="isEmpty" returnType="boolean" visibility="public"/>
+        <Method name="addComponent" returnType="void" visibility="public">
+          <Argument type="double" name="theta"/>
+          <Argument type="double" name="speed"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="next" source="gameproject.Node" target="gameproject.Node" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="gameproject.LinkList" target="gameproject.Ball" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="speed" source="gameproject.Ball" target="gameproject.Speed" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="content" source="gameproject.Main" target="gameproject.Level" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="gameproject.SaveFile" target="gameproject.Ball" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="saveFile" source="gameproject.Input" target="gameproject.SaveFile" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="first" source="gameproject.LinkList" target="gameproject.Node" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="second" source="gameproject.Level" target="gameproject.Ball" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="gameproject.SaveFile" target="gameproject.Character" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="gameproject.Level" target="gameproject.Ball" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="gameproject.Cue" target="gameproject.Level" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="cue" source="gameproject.Level" target="gameproject.Cue" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="gameproject.Ball" target="gameproject.Speed" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="player2" source="gameproject.Level" target="gameproject.Character" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="gameproject.SaveFile" target="gameproject.Level" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="player1" source="gameproject.Level" target="gameproject.Character" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="input" source="gameproject.Main" target="gameproject.Input" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ballHit" source="gameproject.Ball" target="gameproject.Sound" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="first" source="gameproject.Level" target="gameproject.Ball" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="saveFile" source="gameproject.Level" target="gameproject.SaveFile" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ball" source="gameproject.Node" target="gameproject.Ball" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ballList" source="gameproject.Level" target="gameproject.LinkList" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="LinkList"/>
+    <UseRelation source="gameproject.Ball" target="gameproject.Ball" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
